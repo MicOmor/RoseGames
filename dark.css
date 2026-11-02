@@ -1,0 +1,92 @@
+/* Site appearance is independent of the selected board palette. */
+.appearance-heading{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.appearance-heading h2{font-size:27px}
+.appearance-description{font-size:12px;margin-bottom:22px}
+.appearance-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.appearance-option{text-align:left;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.appearance-option[aria-pressed=true]{border:2px solid var(--rose);padding:11px}
+.appearance-option strong{display:flex;justify-content:space-between;font-size:14px;font-weight:500;margin:12px 2px 3px}
+.appearance-option small{display:block;font-size:11px;color:var(--muted);margin:0 2px 4px}
+.appearance-preview{display:flex;height:90px;border-radius:5px;overflow:hidden;background:#f8f6ef;border:1px solid #e2d9ca}
+.appearance-preview::before{content:'';display:block;width:23%;background:#e9e3d7;border-right:1px solid #cfc3b2}
+.appearance-preview span{width:64%;height:48px;margin:17px 10%;border-radius:4px;background:linear-gradient(110deg,#eadfce,#dfcbbb);border-bottom:10px solid #722f45}
+.appearance-preview.dark{background:#211c1b;border-color:#4b3e38}
+.appearance-preview.dark::before{background:#2c2422;border-color:#4b3e38}
+.appearance-preview.dark span{background:linear-gradient(110deg,#44332e,#594236);border-color:#c98d9e}
+.appearance-preview.system{background:linear-gradient(90deg,#f8f6ef 50%,#211c1b 50%)}
+.appearance-preview.system span{background:linear-gradient(90deg,#eadfce 50%,#594236 50%);border-image:linear-gradient(90deg,#722f45 50%,#c98d9e 50%) 1}
+.appearance-check{visibility:hidden;color:var(--rose)}
+[aria-pressed=true] .appearance-check{visibility:visible}
+.appearance-toggle{border:1px solid var(--line);color:var(--rose)}
+.appearance-toggle svg{width:18px;height:18px}
+html[data-appearance=dark]{color-scheme:dark;--ink:#f0e6db;--muted:#b8a99d;--paper:#211c1b;--surface:#2b2422;--line:#493c35;--rose:#dfa6b6;--rose-light:#483039;--gold:#c5a778}
+html[data-appearance=dark] body{background:var(--paper);color:var(--ink)}
+html[data-appearance=dark] :is(.sidebar,.sidebar-bottom){background:#261f1e}
+html[data-appearance=dark] :is(.sidebar-note,.user-block){border-color:var(--line)}
+html[data-appearance=dark] :is(.nav-label,.brand-caption,.breadcrumb,.top-actions,.hero-foot,.art-label,.filter,.ready-filter,.card-meta,.card-copy>p,.card-title>span,.field,.field-note,.local-note,footer,footer button){color:#b8a99d}
+html[data-appearance=dark] .nav-item{color:#c1b1a6}
+html[data-appearance=dark] .nav-item:hover{background:#352b27}
+html[data-appearance=dark] .nav-item.active{background:#493039;color:#f0bac9}
+html[data-appearance=dark] .hero{background:radial-gradient(ellipse at 85% 45%,#4b382b,transparent 68%),linear-gradient(110deg,#302522,#392c25);border-color:#514035}
+html[data-appearance=dark] :is(.hero p,.mode-strip small,.garden-banner p){color:#c3b3a3}
+html[data-appearance=dark] :is(.eyebrow,.section-heading .eyebrow,.garden-banner .eyebrow){color:#d1b795}
+html[data-appearance=dark] .eyebrow>span{background:#b99779}
+html[data-appearance=dark] .hero-art{opacity:.88}
+html[data-appearance=dark] .primary{background:#a5536b;color:#fff8f3;box-shadow:0 3px 10px #08050430}
+html[data-appearance=dark] .primary:hover{background:#91445c}
+html[data-appearance=dark] .secondary{background:#342b26;border-color:#675143;color:#efdfce}
+html[data-appearance=dark] .secondary:hover{background:#44352f}
+html[data-appearance=dark] .hero-actions .secondary{background:transparent;color:#e9caba}
+html[data-appearance=dark] .filter.selected{background:#a4536c;color:#fff3ec}
+html[data-appearance=dark] .filter:hover:not(.selected){border-color:#7c6252;background:#302723}
+html[data-appearance=dark] :is(.mode-symbol,.category-label){background:#3c3028;color:#d5ba92}
+html[data-appearance=dark] .game-card{border-color:var(--line);box-shadow:0 4px 12px #00000016}
+html[data-appearance=dark] .game-card:hover{box-shadow:0 10px 24px #0004;border-color:#6e5146}
+html[data-appearance=dark] .card-art{background:#3b3028}
+html[data-appearance=dark] :is(.art-ludo,.art-memory,.art-ttt,.art-connect,.art-rummy){background:#41302e}
+html[data-appearance=dark] :is(.art-checkers,.art-reversi,.art-trivia){background:#323a2f}
+html[data-appearance=dark] :is(.art-backgammon,.art-dominoes){background:#403426}
+html[data-appearance=dark] .card-art>svg{opacity:.88}
+html[data-appearance=dark] .card-meta{border-color:var(--line)}
+html[data-appearance=dark] .card-badge{background:#253628ed;border-color:#50644a;color:#d3e1bc}
+html[data-appearance=dark] .card-badge.coming{background:#382d25ed;border-color:#67513b;color:#dec9ab}
+html[data-appearance=dark] .favorite{background:#2b2221e8;color:#d9bdac}
+html[data-appearance=dark] .favorite.is-favorite{color:#f0b0c4}
+html[data-appearance=dark] .favorite.is-favorite svg{fill:#b86882}
+html[data-appearance=dark] :is(.search-box,.field input,.field select){background:#2b2422;border-color:#5b493d;color:var(--ink)}
+html[data-appearance=dark] :is(input::placeholder,.search-box){color:#bba999}
+html[data-appearance=dark] .garden-banner{background:linear-gradient(110deg,#2e352a,#35362b);border-color:#505840}
+html[data-appearance=dark] .garden-decoration{color:#9da980}
+html[data-appearance=dark] :is(.community-panel,.stats-grid>div,.table-status){background:#322822;border-color:#534236}
+html[data-appearance=dark] .pill{background:#38412f;color:#d0dcb9}
+html[data-appearance=dark] .badge{background:#332a25;opacity:1;color:#bcaa97}
+html[data-appearance=dark] .badge:not(.earned)>span{color:#9a8773}
+html[data-appearance=dark] .badge.earned{background:#4a3235;color:#f1d9cd}
+html[data-appearance=dark] .badge.earned>span{color:#deb58b}
+html[data-appearance=dark] .history-list .result-win{color:#bed49d}
+html[data-appearance=dark] .turn-chip{background:#392e27;color:#c9b7a4}
+html[data-appearance=dark] .turn-chip.current{background:#5b3643;color:#ffd3df}
+html[data-appearance=dark] .avatar{background:#65424a;border-color:#8a6062;color:#ffe3db}
+html[data-appearance=dark] .avatar.opponent{background:#47563e;border-color:#6d7c5b;color:#e2eccd}
+html[data-appearance=dark] .mini-avatars i{border-color:#362922}
+html[data-appearance=dark] .notice{background:#403226;border-color:#6b513a;color:#e3c9a9}
+html[data-appearance=dark] dialog{background:#2b2321;border-color:#685042;box-shadow:0 25px 80px #0009}
+html[data-appearance=dark] dialog::backdrop{background:#0b0809bb}
+html[data-appearance=dark] .modal-art{background:#403229}
+html[data-appearance=dark] dialog .modal-close{background:#2c2423ec;color:#f1dfcd}
+html[data-appearance=dark] :is(.empty,.upcoming-note){border-color:#5e4b3d}
+html[data-appearance=dark] .quiz-answers .correct{background:#35462c;border-color:#9cb47e;color:#e2efca}
+html[data-appearance=dark] .quiz-answers .incorrect{background:#5c3137;border-color:#c5818b;color:#ffe2dd}
+html[data-appearance=dark] .quiz-progress{background:#514132}
+html[data-appearance=dark] .ttt{background:#574538}
+html[data-appearance=dark] .ttt .square{background:#302824}
+html[data-appearance=dark] .mark1{color:#e2a3b5}
+html[data-appearance=dark] .mark2{color:#bbcea2}
+html[data-appearance=dark] .memory-board{background:#3b3028}
+html[data-appearance=dark] .memory-card{border-color:#846447}
+html[data-appearance=dark] .memory-card.matched{opacity:.7}
+html[data-appearance=dark] .snakes-board{color:#392b1d}
+html[data-appearance=dark] #toast{background:#e9d8c5;color:#36271f;border:1px solid #fff0df}
+html[data-appearance=dark] :is(button,a,input,select,summary):focus-visible{outline-color:#f0bd83}
+html[data-appearance=dark] .square:focus-visible{outline-color:#c4e399}
+@media(max-width:700px){.appearance-options{gap:8px}.appearance-option{padding:8px}.appearance-option[aria-pressed=true]{padding:7px}.appearance-preview{height:70px}.appearance-preview span{margin:14px 10%;height:38px}.appearance-option strong{font-size:12px}.appearance-option small{font-size:10px}html[data-appearance=dark] .sidebar{background:#261f1ef5;border-color:#493c35}}
